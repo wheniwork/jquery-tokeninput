@@ -8,9 +8,9 @@ download_url: https://github.com/loopj/jquery-tokeninput/zipball/jquery-tokeninp
 extra_head: |
     <script type="text/javascript" src="src/jquery.tokeninput.js"></script>
     <link rel="stylesheet" href="styles/token-input-facebook.css" type="text/css" />
-    <script type="text/javascript"> 
+    <script type="text/javascript">
     $(document).ready(function() {
-        $("#tokeninput-demo").tokenInput("http://shell.loopj.com/tokeninput/tvshows.php", {
+        $("#tokeninput-demo").tokenInput("http://jquery-tokeninput-demo.herokuapp.com/", {
             theme: "facebook"
         });
     });
@@ -31,7 +31,7 @@ Overview
 --------
 Tokeninput is a jQuery plugin which allows your users to select multiple items
 from a predefined list, using autocompletion as they type to find each item.
-You may have seen a similar type of text entry when filling in the recipients 
+You may have seen a similar type of text entry when filling in the recipients
 field sending messages on facebook.
 
 
@@ -146,7 +146,7 @@ propertyToSearch
 
 jsonContainer
 :   The name of the json object in the response which contains the search
-    results. This is typically used when your endpoint returns other data in 
+    results. This is typically used when your endpoint returns other data in
 	addition to your search results.
 	Use `null` to use the top level response object. *default: null*.
 
@@ -165,12 +165,12 @@ prePopulate
 ### Display Settings ###
 
 hintText
-:   The text to show in the dropdown label which appears when you first click 
+:   The text to show in the dropdown label which appears when you first click
     in the search field. *default: "Type in a search term"*
     [(demo)](demo.html#custom-labels).
 
 noResultsText
-:   The text to show in the dropdown label when no results are found which 
+:   The text to show in the dropdown label when no results are found which
     match the current query. *default: "No results"*
     [(demo)](demo.html#custom-labels).
 
@@ -179,9 +179,9 @@ searchingText
     progress. *default: "Searching..."* [(demo)](demo.html#custom-labels).
 
 deleteText
-:   The text to show on each token which deletes the token when clicked. If 
-	you wish to hide the delete link, provide an empty string here. 
-	Alternatively you can provide a html string here if you would like to 
+:   The text to show on each token which deletes the token when clicked. If
+	you wish to hide the delete link, provide an empty string here.
+	Alternatively you can provide a html string here if you would like to
 	show an image for deleting tokens.
     *default: &times;* [(demo)](demo.html#custom-delete).
 
@@ -198,26 +198,26 @@ resultsLimit
     all the matching results. *default: null*
 
 resultsFormatter
-:   A function that returns an interpolated HTML string for each result. Use 
+:   A function that returns an interpolated HTML string for each result. Use
     this function with a templating system of your choice, such as jresig
     microtemplates or mustache.js. Use this when you want to include images or
-    multiline formatted results 
-    *default: function(item){ return "<li>" + item.propertyToSearch + "</li>" }* 
+    multiline formatted results
+    *default: function(item){ return "<li>" + item.propertyToSearch + "</li>" }*
     [(demo)](demo.html#formatting).
 
 tokenFormatter
-:   A function that returns an interpolated HTML string for each token. Use 
+:   A function that returns an interpolated HTML string for each token. Use
     this function with a templating system of your choice, such as jresig
     microtemplates or mustache.js. Use this when you want to include images or
-    multiline formatted tokens. Quora's people invite token field that returns 
-    avatar tokens is a good example of what can be done this option. 
-    *default: function(item){ return "<li><p>" + item.propertyToSearch + "</p></li>" }* 
+    multiline formatted tokens. Quora's people invite token field that returns
+    avatar tokens is a good example of what can be done this option.
+    *default: function(item){ return "<li><p>" + item.propertyToSearch + "</p></li>" }*
     [(demo)](demo.html#formatting).
 
 ### Tokenization Settings ###
 
 tokenLimit
-:   The maximum number of results allowed to be selected by the user. Use 
+:   The maximum number of results allowed to be selected by the user. Use
     `null` to allow unlimited selections. *default: null*
     [(demo)](demo.html#custom-limits).
 
@@ -237,7 +237,7 @@ tokenValue
 ### Callbacks ###
 
 onResult
-:   A function to call whenever we receive results back from the server. You 
+:   A function to call whenever we receive results back from the server. You
     can use this function to pre-process results from the server before they
     are displayed to the user. *default: null*
     [(demo)](demo.html#onresult).
