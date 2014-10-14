@@ -10,8 +10,9 @@ extra_head: |
     <link rel="stylesheet" href="styles/token-input-facebook.css" type="text/css" />
     <script type="text/javascript">
     $(document).ready(function() {
-        $("#tokeninput-demo").tokenInput("http://jquery-tokeninput-demo.herokuapp.com/demo.php", {
-            theme: "facebook"
+        $("#tokeninput-demo").tokenInput("http://jquery-tokeninput-demo.herokuapp.com", {
+            theme: "facebook",
+            crossDomain: true
         });
     });
     </script>
