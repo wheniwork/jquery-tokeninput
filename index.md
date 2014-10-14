@@ -11,8 +11,7 @@ extra_head: |
     <script type="text/javascript">
     $(document).ready(function() {
         $("#tokeninput-demo").tokenInput("http://jquery-tokeninput-demo.herokuapp.com", {
-            theme: "facebook",
-            crossDomain: true
+            theme: "facebook"
         });
     });
     </script>
