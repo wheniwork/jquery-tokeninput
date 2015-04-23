@@ -36,6 +36,7 @@
     theme: null,
     zindex: 999,
     resultsLimit: null,
+    resultsDefault: null,
 
     enableHTML: false,
 
@@ -260,7 +261,7 @@
                   return false;
               } else
               if ($(input).data("settings").tokenLimit === null || $(input).data("settings").tokenLimit !== token_count) {
-                  show_dropdown_hint();
+                  show_dropdown_init();
               }
               token_list.addClass($(input).data("settings").classes.focused);
           })
@@ -814,6 +815,16 @@
           if($(input).data("settings").searchingText) {
               dropdown.html("<p>" + escapeHTML($(input).data("settings").searchingText) + "</p>");
               show_dropdown();
+          }
+      }
+
+
+      function show_dropdown_init () {
+          if($(input).data("settings").local_data && $(input).data("settings").resultsDefault) {
+              var result = $(input).data("settings").local_data.slice(0, $(input).data("settings").resultsDefault);
+              populate_dropdown("", result);
+          } else {
+              show_dropdown_hint();
           }
       }
 
