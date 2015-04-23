@@ -196,6 +196,11 @@
       }
   };
 
+  // Expose the .tokenInput function to jQuery to overload default settings
+  $.tokenInput = function(options) {
+      DEFAULT_SETTINGS = $.extend(DEFAULT_SETTINGS, options || {});
+  };
+
   // TokenList class for each input
   $.TokenList = function (input, url_or_data, settings) {
       //
