@@ -802,6 +802,7 @@
       function hide_dropdown () {
           dropdown.hide().empty();
           selected_dropdown_item = null;
+          $(window).off('resize.tokeninput');
       }
 
       function show_dropdown() {
@@ -814,6 +815,7 @@
                   'z-index': $(input).data("settings").zindex
               })
               .show();
+          $(window).one('resize.tokeninput', hide_dropdown);
       }
 
       function show_dropdown_searching () {
